@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: '/Font/Raleway-Italic-VariableFont_wght.ttf';
     line-height: 1.6;
     background-color: #f2f2f2; 
     color: #333;
@@ -20,7 +20,7 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 36px;
+    font-size: 2rem;
     font-weight: bold;
 }
 
@@ -47,11 +47,11 @@ nav ul li a {
 nav ul li a:hover {
     color: #ffcc00; 
 }
+
 nav ul li a.active {
     font-weight: bold;
     color: #ffcc00; 
 }
-
 
 main {
     padding: 20px;
@@ -89,65 +89,40 @@ footer {
 
 main section {
     padding: 20px;
-    justify-content: center; 
-    align-items: center;
-    text-align: center;
-}
-
-#about main section {
-    text-align: center;
-}
-
-#cv main section {
-    text-align: center;
-}
-
-#portfolio main section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-#lorem main section {
     text-align: center;
 }
 
 .project {
-    width: calc(33.33% - 20px);
+    width: 100%;
     margin-bottom: 20px;
-    text-align: center;
-    margin: auto;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.project .project-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .project img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-#contact main section {
-    text-align: center;
-}
-
-#contact ul {
-    list-style: none;
-    padding: 0;
-}
-
-#contact li {
     margin-bottom: 10px;
 }
 
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: #DEB887;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
 .modal-content {
@@ -182,8 +157,88 @@ main section {
 .close:hover,
 .close:focus {
     color: #333;
-    text-decoration: none;
+    cursor: pointer;
+}
+.contact-list {
+    list-style: none;
+}
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+.btn {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.close-button {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
     cursor: pointer;
 }
 
+@media only screen and (max-width: 768px) {
+    .grid-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
+    .project {
+        width: 100%;
+    }
+}
+@media print {
+    header, nav {
+        display: none;
+    }
+
+    body {
+        font-size: 12pt;
+    }
+
+    main {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    body {
+        background-color: #fff;
+        color: #000;
+    }
+
+    .project .project-content {
+        display: block;
+        text-align: center;
+    }
+
+    .project img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+
+    section {
+        page-break-after: always;
+    }
+
+    .modal, .overlay {
+        display: none;
+    }
+}
