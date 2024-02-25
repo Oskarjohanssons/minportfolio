@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f2f2f2; 
+    color: #333;
+}
+
+header {
+    background-color: #DEB887;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease; 
+}
+
+nav ul li a:hover {
+    color: #ffcc00; 
+}
+nav ul li a.active {
+    font-weight: bold;
+    color: #ffcc00; 
+}
+
+
+main {
+    padding: 20px;
+}
+
+footer {
+    background-color: #DEB887;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+    header {
+        padding: 10px;
+    }
+    nav ul {
+        display: block;
+        margin-top: 10px;
+    }
+    nav ul li {
+        display: block;
+        margin: 10px auto;
+    }
+}
+
+@media print {
+    header, footer {
+        display: none;
+    }
+    main {
+        margin-top: 20px;
+    }
+}
+
+main section {
+    padding: 20px;
+    justify-content: center; 
+    align-items: center;
+    text-align: center;
+}
+
+#about main section {
+    text-align: center;
+}
+
+#cv main section {
+    text-align: center;
+}
+
+#portfolio main section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#lorem main section {
+    text-align: center;
+}
+
+.project {
+    width: calc(33.33% - 20px);
+    margin-bottom: 20px;
+    text-align: center;
+    margin: auto;
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#contact main section {
+    text-align: center;
+}
+
+#contact ul {
+    list-style: none;
+    padding: 0;
+}
+
+#contact li {
+    margin-bottom: 10px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #DEB887;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 20% auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+}
+.modal:target {
+    display: block;
+}
+
+.modal .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    transition: color 0.3s ease; 
+}
+
+.close:hover,
+.close:focus {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
